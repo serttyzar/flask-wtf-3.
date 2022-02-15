@@ -1,16 +1,18 @@
-# This is a sample Python script.
+from flask import Flask, render_template
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+app = Flask(__name__)
 
 
-# Press the green button in the gutter to run the script.
+@app.route('/index/<title>')
+def index(title):
+    return render_template('base.html', title=title.lower())
+
+
+@app.route('/training/<prof>')
+def training(prof):
+    return render_template('training.html', prof=prof, it_img="{url_for('static', filename='img/it')}",
+                           hc_img="{url_for('static', filename='img/hc')}")
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    app.run(port=8080, host='127.0.0.1')
