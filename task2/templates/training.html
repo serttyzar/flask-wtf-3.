@@ -1,13 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if 'инженер' in prof or 'строитель' in prof %}
-        <h5>Инженерные тренажеры</h5>
-        <img src={{url_for('static', filename='img/it')}}
-                alt="здесь должна была быть картинка, но не нашлась">
+    <h4><strong>Список профессий</strong></h4>
+    {% if type == "ol" %}
+        <ol>
+          <li>Инженер-исследователь</li>
+          <li>Пилот</li>
+          <li>Строитель</li>
+          <li>Врач</li>
+          <li>Климатолог</li>
+          <li>Штурман</li>
+          <li>Киберинженер</li>
+        </ol>
     {% else %}
-        <h5>Научные симуляторы</h5>
-        <img src={{url_for('static', filename='img/hc')}}
-                alt="здесь должна была быть картинка, но не нашлась">
+        <ul>
+          <li>Инженер-исследователь</li>
+          <li>Пилот</li>
+          <li>Строитель</li>
+          <li>Врач</li>
+          <li>Климатолог</li>
+          <li>Штурман</li>
+          <li>Киберинженер</li>
+        </ul>
     {% endif %}
 {% endblock %}

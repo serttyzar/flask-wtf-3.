@@ -8,10 +8,9 @@ def index(title):
     return render_template('base.html', title=title.lower())
 
 
-@app.route('/training/<prof>')
-def training(prof):
-    return render_template('training.html', prof=prof, it_img="{url_for('static', filename='img/it')}",
-                           hc_img="{url_for('static', filename='img/hc')}")
+@app.route('/list_prof/<_type>')
+def training(_type):
+    return render_template('training.html', type=_type)
 
 
 if __name__ == '__main__':

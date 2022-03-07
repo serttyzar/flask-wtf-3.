@@ -1,5 +1,7 @@
-h1{
-    margin: center;
+
+.container {
+  text-align: left;
+  float: left;
 }
 form.login_form {
     margin-left: auto;
